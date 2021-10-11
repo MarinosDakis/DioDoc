@@ -19,6 +19,7 @@ const patientSchema = mongoose.Schema({
         employerName: String,
         Occupation: String,
         selectedFile: String,
+        height: String,
 
     },
 

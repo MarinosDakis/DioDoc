@@ -31,6 +31,9 @@ const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "50px",
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
@@ -51,6 +54,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+  backgroundColor: "rgba(0,183,255, 1)",
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
