@@ -10,7 +10,8 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    width: "500px",
+    width: "650px",
+    borderRadius: "90px",
   },
   form: {
     display: 'flex',
@@ -25,7 +26,7 @@ export default makeStyles((theme) => ({
       backgroundColor: "#20edfd",
     },
   },
-  buttonClear: {
+  buttonEdit: {
     margin: "10px",
     width: "20%",
     backgroundColor: "#e4dbe2",
@@ -39,5 +40,20 @@ export default makeStyles((theme) => ({
   },
   title: {
     marginBottom: "10px",
+  },
+  profileImg: {
+    borderRadius: "180px",
+    height: "300px",
+    width: "300px",
+  },
+  grid: {
+    textAlign: "center",
+    margin: "20px 5px",
+    backgroundColor: "#00b7ff",
+    borderRadius: "10px",
+  },
+  container: {
+    display: "flex",
+    justifyContent: "center",
   }  
 }));

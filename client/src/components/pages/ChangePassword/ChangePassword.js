@@ -49,7 +49,7 @@ export default function ChangePassword({ currentId, setCurrentId }) {
         // used from: https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a#:~:text=Minimum%20eight%20characters%2C%20at%20least%20one%20letter%2C%20one%20number%20and%20one%20special%20character%3A
         let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W]{8,}$/;
         if (!regex.test(resetPasswordData.newPassword)){
-            errors.push("Password does not meet requirements!");
+            errors.push("New password does not meet requirements!");
             errorCount++;
         }
 
