@@ -1,7 +1,7 @@
 export const settingsData = [
     {
         settingName: "Delete Account",
-        desc: "Permanently delete your user profile; this action is irreversible",
+        desc: "Permanently delete your user profile.",
         path: "",
         component: "",
     },

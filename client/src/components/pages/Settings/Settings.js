@@ -8,36 +8,11 @@ export default function Settings({ currentId, setCurrentId }) {
 
     const classes = useStyles();
 
-    const handleSubmit = async (e) => {
-
-        e.preventDefault();
-        if (currentId === 0) {
-            // dispatch update user profile
-            // dispatch(deletePatient(currentId, { ...postData, name: user?.result?.name }));
-        } else {
-            // display an error
-            console.log("account deleted");
-        }
-    }
-
-    const changeUsername = async (e) => {
-        e.preventDefault();
-
-        console.log("Username Changed");
-    }
-
-    const showDetails = async (e) => {
-        e.preventDefault();
-
-        console.log("details displayed");
-    }
-
     return (
 
-        <Grid>
-            <Container>
+        <Grid container>
                 {settingsData.map((item, index) => (
-                    <Grid item sx={12} sm={6} md={6} lg={6} key={index}>
+                    <Grid item sx={12} sm={12} md={6} lg={6} key={index}  className={classes.container}>
                         <Card className={classes.card} sx={{ minWidth: 400 }}>
                             <CardContent className={classes.cardContent}>
                                 <Typography variant="h5" gutterBottom>{item.settingName}</Typography>
@@ -49,7 +24,6 @@ export default function Settings({ currentId, setCurrentId }) {
                         </Card>
                     </Grid>
                 ))}
-            </Container>
         </Grid>
 
     )
