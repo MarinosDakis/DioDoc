@@ -25,15 +25,15 @@ import Settings from "../pages/Settings/Settings";
 import Diseases from "../pages/Diseases/Diseases";
 import Appointments from "../pages/Appointments/Appointments";
 import ChangePassword from "../pages/ChangePassword/ChangePassword";
+import DioDocHome from "../pages/DioDocHome/DioDocHome";
+import useStyles from "./styles";
+
 
 // for the drawer
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "50px",
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
@@ -54,7 +54,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-  backgroundColor: "rgba(0,183,255, 1)",
+  backgroundColor: "rgba(0,183,255,1)",
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -94,6 +94,11 @@ export default function PersistentDrawerLeft() {
 
   // constants
   const location = useLocation();
+  const classes = useStyles();
+
+  const logout = () => {
+    console.log("logged out");
+  };
 
   return (
 
@@ -110,9 +115,9 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Full Name
-          </Typography>
+          <Link className={classes.text} to="/">
+            <Typography className={classes.text} variant="h4">Dio-Doc</Typography>
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -136,27 +141,31 @@ export default function PersistentDrawerLeft() {
         <Divider />
         
         <List>
-            {SidebarData.map((item, index) => (
-                <ListItem button component={Link} to={item.path} key={item.title}>
-                        {/* The icon for each item in side bar */}
-                        <ListItemIcon>{item.icon}</ListItemIcon>
-                        {/* The text for each item in side bar */}
-                        <ListItemText primary={item.title} />
-                </ListItem>
+            {SidebarData.map((item) => (
+              <div key={item.title}>
+                  <ListItem button component={Link} to={item.path} >
+                          {/* The icon for each item in side bar */}
+                          <ListItemIcon>{item.icon}</ListItemIcon>
+                          {/* The text for each item in side bar */}
+                          <ListItemText primary={item.title} />
+                  </ListItem>
+                  <Divider />
+                </div>
             ))}
         </List>
       </Drawer>
 
       <Main open={open}>
         <DrawerHeader />
-        {location.pathname === "/dashboard" ? <Dashboard /> : 
+        {location.pathname === "/" ? <DioDocHome /> :
+        location.pathname === "/dashboard" ? <Dashboard /> : 
         location.pathname === "/profile" ? <Profile /> :
         location.pathname === "/appointments" ? <Appointments /> :
         location.pathname === "/messages" ? <Messages /> :
         location.pathname === "/passwordreset" ? <ChangePassword /> :
         location.pathname === "/settings" ? <Settings /> :
         location.pathname === "/diseases" ? <Diseases /> :
-        <h1 align="center">Please sign in</h1>}
+        location.pathname === "/logout" ? logout() : null}
       </Main>
     </Box>
   );

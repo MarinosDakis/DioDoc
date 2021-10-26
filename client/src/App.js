@@ -1,7 +1,7 @@
 // adapted from: https://www.youtube.com/watch?v=ngc9gnGgUdA&list=PL6QREj8te1P7VSwhrMf3D3Xt4V6_SRkhu&index=1
 // adapted from: https://www.youtube.com/watch?v=aibtHnbeuio&list=PL6QREj8te1P7VSwhrMf3D3Xt4V6_SRkhu&index=2
 import React, { useState, useEffect } from 'react'
-import { Container} from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // not logged in import
 import Navbar from "./components/Navbar/Navbar";
@@ -19,17 +19,13 @@ const App = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
-    return (
+  return (
     <BrowserRouter>
-        <Container maxWidth="lg">
-          {user ? <Navbar /> : <Sidebar />}
-          <Switch>
-            <Route path="/" exact component={DioDocHome} /> 
-            <Route path="/auth" exact component={Auth} />
-          </Switch>
-        </Container>
+      <Container maxWidth="lg">
+        <Sidebar />
+      </Container>
     </BrowserRouter>
-    );
+  );
 }
 
 export default App;

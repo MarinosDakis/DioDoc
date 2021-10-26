@@ -6,6 +6,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import BookIcon from '@mui/icons-material/Book';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import LockIcon from '@mui/icons-material/Lock';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const SidebarData = [
     {
@@ -50,4 +51,10 @@ export const SidebarData = [
       icon: <SettingsIcon />,
       className: "nav-text"   
     },
+    {
+      title: "Logout",
+      path: "/logout",
+      icon: <LogoutIcon />,
+      className: "nav-text"   
+    }
 ]

@@ -39,36 +39,36 @@ export default function Profile({ currentId, setCurrentId }) {
     return (
         <Container className={classes.container}>
                 <Paper variant="outlined" className={classes.paper}>
-                <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={isEdit ? handleSubmit : null}>
-                    <img className={classes.profileImg} src={profileData.profileImg === "" ? profileImg : profileData?.profileImg} alt="User's face"></img>
-                       
-                    <Grid className={classes.grid} container spacing={2}>
-                            <Grid item xs={12}><Paper><Typography variant="h6">User Information</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Name: Marinos Dakis {profileData?.name}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Sex: Male {profileData?.sex}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Height: 182cm {profileData?.height}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Weight: 165lbs {profileData?.weight}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Smoke: {profileData?.smoke ? "Yes" : "No"}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Drink: {profileData?.drink ? "Yes" : "No"}</Typography></Paper></Grid>  
-                    </Grid>
+                    <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={isEdit ? handleSubmit : null}>
+                        <img className={classes.profileImg} src={profileData.profileImg === "" ? profileImg : profileData?.profileImg} alt="User's face"></img>
+                        
+                        <Grid className={classes.grid} container spacing={2}>
+                                <Grid item xs={12}><Paper><Typography variant="h6">User Information</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Name: Marinos Dakis {profileData?.name}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Sex: Male {profileData?.sex}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Height: 182cm {profileData?.height}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Weight: 165lbs {profileData?.weight}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Smoke: {profileData?.smoke ? "Yes" : "No"}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Drink: {profileData?.drink ? "Yes" : "No"}</Typography></Paper></Grid>  
+                        </Grid>
 
-                    <Grid className={classes.grid} container spacing={2}>
-                            <Grid item xs={12}><Paper><Typography variant="h6">Address Information</Typography></Paper></Grid>
-                            <Grid item xs={6}> <Paper><Typography variant="h6">Address: 151-47 11th Ave {profileData?.address}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">City: Whitestone {profileData?.city}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">State: NY {profileData?.state}</Typography></Paper></Grid>
-                            <Grid item xs={6}><Paper><Typography variant="h6">Zip: 11357 {profileData?.zip}</Typography></Paper></Grid>        
-                    </Grid>
+                        <Grid className={classes.grid} container spacing={2}>
+                                <Grid item xs={12}><Paper><Typography variant="h6">Address Information</Typography></Paper></Grid>
+                                <Grid item xs={6}> <Paper><Typography variant="h6">Address: 151-47 11th Ave {profileData?.address}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">City: Whitestone {profileData?.city}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">State: NY {profileData?.state}</Typography></Paper></Grid>
+                                <Grid item xs={6}><Paper><Typography variant="h6">Zip: 11357 {profileData?.zip}</Typography></Paper></Grid>        
+                        </Grid>
 
-                    <Grid className={classes.grid} container spacing={2}>
-                            <Grid item xs={12}><Paper><Typography variant="h6">Contact Information</Typography></Paper></Grid>
-                            <Grid item xs> <Paper><Typography variant="h6">Phone: 516-757-5961 {profileData?.phone}</Typography></Paper></Grid>    
-                    </Grid>
+                        <Grid className={classes.grid} container spacing={2}>
+                                <Grid item xs={12}><Paper><Typography variant="h6">Contact Information</Typography></Paper></Grid>
+                                <Grid item xs> <Paper><Typography variant="h6">Phone: 516-757-5961 {profileData?.phone}</Typography></Paper></Grid>    
+                        </Grid>
 
-                    <Button className={classes.buttonEdit} variant="contained" size="large" onClick={handleEdit} disabled={isEdit ? true : false}>Edit</Button>
-                    <Button className={classes.buttonSubmit} variant="contained" size="large" onClick={handleEdit} disabled={isEdit ? false : true}>Save</Button>
+                        <Button className={classes.buttonEdit} variant="contained" size="large" onClick={handleEdit} disabled={isEdit ? true : false}>Edit</Button>
+                        <Button className={classes.buttonSubmit} variant="contained" size="large" onClick={handleEdit} disabled={isEdit ? false : true}>Save</Button>
 
-                </form>
+                    </form>
                 </Paper>
         </Container>
     )
