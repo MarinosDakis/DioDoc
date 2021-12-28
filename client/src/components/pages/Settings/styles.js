@@ -28,7 +28,7 @@ export default makeStyles((theme) => ({
     width: "400px",
     height: "150px",
     margin: "20px 0px",
-    border: "#7e7878 solid 1px",
+    border: "#b5aeae solid 1px",
     boxShadow: "0 4px 5px 1px rgba(0, 0, 0, .2)",
     display: "flex",
   },

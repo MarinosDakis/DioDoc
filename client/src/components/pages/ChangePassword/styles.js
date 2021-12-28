@@ -10,7 +10,8 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    width: "500px",
+    maxWidth: 500,
+    minWidth: 360
   },
   form: {
     display: 'flex',
@@ -39,5 +40,9 @@ export default makeStyles((theme) => ({
   },
   title: {
     marginBottom: "10px",
-  }  
+  },
+  container: {
+    display: "flex",
+    justifyContent: "center",
+  }
 }));

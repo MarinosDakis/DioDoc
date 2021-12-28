@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Typography, Grid, Container, Card, CardContent, CardActions } from '@material-ui/core';
+import { Button, Typography, Grid, Card, CardContent, CardActions } from '@material-ui/core';
 
 import useStyles from './styles';
 import {settingsData} from "./settingsData";

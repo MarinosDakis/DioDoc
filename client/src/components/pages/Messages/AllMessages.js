@@ -9,11 +9,12 @@ import useStyles from "./styles";
 
 const AllMessages = ({ setCurrentId }) => {
 
+    // get all messages
     const messages = useSelector((state) => state.messages);
     const classes = useStyles();
 
     return (
-        !messages.length ? <CircularProgress /> : (
+        !messages.length < 0 ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {messages.map((message) => (
                     <Grid key={message._id} item xs={12} sm={6}>

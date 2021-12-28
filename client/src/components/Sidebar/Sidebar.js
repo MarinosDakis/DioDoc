@@ -106,13 +106,7 @@ export default function PersistentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
+          <IconButton color="inherit" aria-label="open drawer" onClick={handleDrawerOpen} edge="start" sx={{ mr: 2, ...(open && { display: 'none' }) }}>
             <MenuIcon />
           </IconButton>
           <Link className={classes.text} to="/">
@@ -120,52 +114,40 @@ export default function PersistentDrawerLeft() {
           </Link>
         </Toolbar>
       </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
+      <Drawer sx={{ width: drawerWidth, flexShrink: 0, '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', }, }} variant="persistent" anchor="left" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        
+
         <List>
-            {SidebarData.map((item) => (
-              <div key={item.title}>
-                  <ListItem button component={Link} to={item.path} >
-                          {/* The icon for each item in side bar */}
-                          <ListItemIcon>{item.icon}</ListItemIcon>
-                          {/* The text for each item in side bar */}
-                          <ListItemText primary={item.title} />
-                  </ListItem>
-                  <Divider />
-                </div>
-            ))}
+          {SidebarData.map((item) => (
+            <Box key={item.title}>
+              <ListItem button component={Link} to={item.path} >
+                {/* The icon for each item in side bar */}
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                {/* The text for each item in side bar */}
+                <ListItemText primary={item.title} />
+              </ListItem>
+              <Divider />
+            </Box>
+          ))}
         </List>
       </Drawer>
 
       <Main open={open}>
         <DrawerHeader />
         {location.pathname === "/" ? <DioDocHome /> :
-        location.pathname === "/dashboard" ? <Dashboard /> : 
-        location.pathname === "/profile" ? <Profile /> :
-        location.pathname === "/appointments" ? <Appointments /> :
-        location.pathname === "/messages" ? <Messages /> :
-        location.pathname === "/passwordreset" ? <ChangePassword /> :
-        location.pathname === "/settings" ? <Settings /> :
-        location.pathname === "/diseases" ? <Diseases /> :
-        location.pathname === "/logout" ? logout() : null}
+          location.pathname === "/dashboard" ? <Dashboard /> :
+            location.pathname === "/profile" ? <Profile /> :
+              location.pathname === "/appointments" ? <Appointments /> :
+                location.pathname === "/messages" ? <Messages /> :
+                  location.pathname === "/passwordreset" ? <ChangePassword /> :
+                    location.pathname === "/settings" ? <Settings /> :
+                      location.pathname === "/diseases" ? <Diseases /> :
+                        location.pathname === "/logout" ? logout() : null}
       </Main>
     </Box>
   );
